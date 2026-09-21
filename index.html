@@ -50,20 +50,23 @@ body{
 
 /* ---------- langit ---------- */
 .sky{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-.sun{
+.moon{
   position:absolute;
   top:calc(4% + env(safe-area-inset-top,0px));
   right:6%;
-  width:min(110px,22vw);
-  height:min(110px,22vw);
+  width:min(100px,20vw);
+  height:min(100px,20vw);
   border-radius:50%;
-  background:radial-gradient(circle at 35% 32%,#fffef2 0%,#ffe9a8 45%,#ffd873 75%,#ffcb52 100%);
+  background:radial-gradient(circle at 32% 30%,#ffffff 0%,#fdfaf0 40%,#f6edc8 75%,#ecdda0 100%);
   box-shadow:
-    0 0 40px 14px rgba(255,232,150,.65),
-    0 0 90px 40px rgba(255,220,120,.35);
-  animation:sun-pulse 5s ease-in-out infinite;
+    inset 14px -6px 0 -2px rgba(220,205,160,.55),
+    0 0 30px 10px rgba(255,250,220,.55),
+    0 0 70px 30px rgba(255,245,200,.28);
+  -webkit-mask-image:radial-gradient(circle 46% at 66% 42%,transparent 98%,#000 100%);
+          mask-image:radial-gradient(circle 46% at 66% 42%,transparent 98%,#000 100%);
+  animation:moon-glow 5s ease-in-out infinite;
 }
-@keyframes sun-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes moon-glow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .cloud{
   position:absolute;background:var(--cloud);border-radius:999px;opacity:.85;
   animation:drift linear infinite;
@@ -257,7 +260,7 @@ button.ghost[hidden]{display:none}
   .letter p{font-size:.96rem;line-height:1.7;margin-bottom:11px}
   .controls{margin-top:12px;padding-top:12px;gap:8px}
   button.nav{padding:10px 16px;font-size:.94rem}
-  .sun{width:min(74px,20vw);height:min(74px,20vw);top:calc(3% + env(safe-area-inset-top,0px));right:5%}
+  .moon{width:min(64px,17vw);height:min(64px,17vw);top:calc(3% + env(safe-area-inset-top,0px));right:5%}
   .sound-btn{width:40px;height:40px;font-size:1rem;top:calc(10px + env(safe-area-inset-top,0px));left:10px}
 }
 @media (max-height:560px){
@@ -268,7 +271,7 @@ button.ghost[hidden]{display:none}
 </head>
 <body>
 
-<div class="sky" id="sky" aria-hidden="true"><span class="sun"></span></div>
+<div class="sky" id="sky" aria-hidden="true"><span class="moon"></span></div>
 
 <audio id="bgm" src="music.mp3" loop preload="none"></audio>
 <button class="sound-btn" id="soundBtn" aria-label="Nyalakan musik" aria-pressed="false">&#9835;</button>
