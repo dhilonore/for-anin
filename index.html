@@ -9,9 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sky-top:#bfe8ff;
-  --sky-mid:#8fd3f7;
-  --sky-low:#5fb8e8;
+  --sky-top:#8fd8ff;
+  --sky-mid:#5cc2f7;
+  --sky-low:#2fa8ea;
+  --sun:#fff6d8;
   --cloud:#ffffff;
   --ink:#255172;
   --blush:#ffb3c7;
@@ -37,15 +38,32 @@
 html,body{height:100%}
 body{
   margin:0;
+  min-height:100dvh;
   font-family:Quicksand,"Segoe UI",system-ui,sans-serif;
   color:var(--ink);
   background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 55%,var(--sky-low) 100%);
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
   -webkit-font-smoothing:antialiased;
 }
+.sky{position:fixed !important}
 
 /* ---------- langit ---------- */
 .sky{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.sun{
+  position:absolute;
+  top:calc(4% + env(safe-area-inset-top,0px));
+  right:6%;
+  width:min(110px,22vw);
+  height:min(110px,22vw);
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 32%,#fffef2 0%,#ffe9a8 45%,#ffd873 75%,#ffcb52 100%);
+  box-shadow:
+    0 0 40px 14px rgba(255,232,150,.65),
+    0 0 90px 40px rgba(255,220,120,.35);
+  animation:sun-pulse 5s ease-in-out infinite;
+}
+@keyframes sun-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .cloud{
   position:absolute;background:var(--cloud);border-radius:999px;opacity:.85;
   animation:drift linear infinite;
@@ -71,13 +89,18 @@ body{
 }
 
 /* ---------- panggung ---------- */
-.stage{position:relative;z-index:2;height:100%;display:grid;place-items:center;padding:20px 16px}
+.stage{
+  position:relative;z-index:2;
+  min-height:100dvh;
+  display:grid;place-items:center;
+  padding:calc(18px + env(safe-area-inset-top,0px)) 14px calc(24px + env(safe-area-inset-bottom,0px));
+}
 
 /* ---------- amplop ---------- */
 .envelope-wrap{display:grid;justify-items:center;gap:22px;animation:rise .9s cubic-bezier(.2,.9,.3,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .envelope{
-  position:relative;width:min(320px,82vw);aspect-ratio:1.5/1;
+  position:relative;width:min(300px,78vw);aspect-ratio:1.5/1;
   border:0;padding:0;background:none;cursor:pointer;
   filter:drop-shadow(0 18px 26px rgba(24,74,110,.28));
   transition:transform .3s ease;animation:hover-idle 4s ease-in-out infinite;
@@ -130,9 +153,9 @@ body{
 
 /* ---------- kertas surat dengan lekukan lipatan ---------- */
 .letter{
-  position:relative;width:min(540px,93vw);
-  border-radius:16px;
-  padding:30px 28px 22px;
+  position:relative;width:min(540px,94vw);
+  border-radius:18px;
+  padding:24px 20px 18px;
   color:#2c5069;
   display:none;
   background:linear-gradient(170deg,var(--paper) 0%,#f7fbfe 55%,#eef6fc 100%);
@@ -201,21 +224,54 @@ button.nav:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
 button.ghost{background:none;color:#6f97b3;box-shadow:none;padding:11px 8px}
 button.ghost[hidden]{display:none}
 
+.sound-btn{
+  position:fixed;
+  top:calc(14px + env(safe-area-inset-top,0px));
+  left:14px;
+  z-index:5;
+  width:46px;height:46px;border-radius:50%;
+  border:0;cursor:pointer;
+  background:rgba(255,255,255,.85);
+  color:#2f6f9b;
+  font-size:1.15rem;
+  display:grid;place-items:center;
+  box-shadow:0 6px 14px rgba(20,70,105,.25);
+  backdrop-filter:blur(3px);
+  transition:transform .2s ease;
+}
+.sound-btn:hover{transform:scale(1.06)}
+.sound-btn:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+
 .heart{position:fixed;top:-40px;z-index:3;pointer-events:none;font-size:22px;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(112vh) rotate(260deg);opacity:0}}
 
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
-@media (max-width:420px){
-  .letter{padding:26px 20px 18px}
-  .letter-body{max-height:44vh}
+@media (max-width:480px){
+  .envelope{width:min(260px,72vw)}
+  .hint{font-size:.88rem}
+  .letter{padding:20px 16px 16px;border-radius:16px}
+  .letter-body{max-height:42vh;padding-right:6px}
+  .letter h2{font-size:clamp(1.6rem,7vw,2.1rem);margin-bottom:10px}
+  .letter p{font-size:.96rem;line-height:1.7;margin-bottom:11px}
+  .controls{margin-top:12px;padding-top:12px;gap:8px}
+  button.nav{padding:10px 16px;font-size:.94rem}
+  .sun{width:min(74px,20vw);height:min(74px,20vw);top:calc(3% + env(safe-area-inset-top,0px));right:5%}
+  .sound-btn{width:40px;height:40px;font-size:1rem;top:calc(10px + env(safe-area-inset-top,0px));left:10px}
+}
+@media (max-height:560px){
+  .stage{align-items:start;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+  .letter-body{max-height:34vh}
 }
 </style>
 </head>
 <body>
 
-<div class="sky" id="sky" aria-hidden="true"></div>
+<div class="sky" id="sky" aria-hidden="true"><span class="sun"></span></div>
+
+<audio id="bgm" src="music.mp3" loop preload="none"></audio>
+<button class="sound-btn" id="soundBtn" aria-label="Nyalakan musik" aria-pressed="false">&#9835;</button>
 
 <main class="stage">
   <div class="envelope-wrap" id="envWrap">
@@ -286,8 +342,8 @@ const PUP_IMG = "cinnamoroll.png";
 
 /* awan latar */
 const sky=document.getElementById('sky');
-[{w:170,t:'8%',d:46,dl:-6},{w:110,t:'22%',d:62,dl:-24},{w:220,t:'46%',d:74,dl:-40},
- {w:130,t:'68%',d:55,dl:-14},{w:190,t:'84%',d:88,dl:-52}].forEach(c=>{
+[{w:170,t:'8%',d:20,dl:-3},{w:110,t:'22%',d:26,dl:-11},{w:220,t:'46%',d:32,dl:-18},
+ {w:130,t:'68%',d:23,dl:-7},{w:190,t:'84%',d:36,dl:-24}].forEach(c=>{
   const el=document.createElement('div');
   el.className='cloud';
   el.style.cssText=`width:${c.w}px;height:${c.w*0.34}px;top:${c.t};animation-duration:${c.d}s;animation-delay:${c.dl}s;opacity:${(0.55+Math.random()*0.35).toFixed(2)}`;
@@ -295,9 +351,9 @@ const sky=document.getElementById('sky');
 });
 
 /* karakter melayang */
-[{top:'12%',w:110,d:38,dl:-4,flip:false},
- {top:'52%',w:150,d:54,dl:-22,flip:false},
- {top:'74%',w:88, d:46,dl:-33,flip:true }].forEach(p=>{
+[{top:'12%',w:110,d:16,dl:-2,flip:false},
+ {top:'52%',w:150,d:22,dl:-9, flip:false},
+ {top:'74%',w:88, d:18,dl:-13,flip:true }].forEach(p=>{
   const el=document.createElement('div');
   el.className='pup'+(p.flip?' flip':'');
   el.style.cssText=`top:${p.top};width:${p.w}px;animation-duration:${p.d}s;animation-delay:${p.dl}s`;
@@ -309,6 +365,31 @@ const sky=document.getElementById('sky');
   bob.appendChild(img);
   el.appendChild(bob);
   sky.appendChild(el);
+});
+
+/* musik latar */
+const bgm=document.getElementById('bgm');
+const soundBtn=document.getElementById('soundBtn');
+let musicOn=false;
+function playMusic(){
+  bgm.volume=0.55;
+  bgm.play().then(()=>{
+    musicOn=true;
+    soundBtn.textContent='\u266B';
+    soundBtn.setAttribute('aria-pressed','true');
+    soundBtn.setAttribute('aria-label','Matikan musik');
+  }).catch(()=>{ /* file music.mp3 belum ada / autoplay diblokir, tombol tetap bisa dipakai manual */ });
+}
+soundBtn.addEventListener('click',()=>{
+  if(musicOn){
+    bgm.pause();
+    musicOn=false;
+    soundBtn.textContent='\u266A';
+    soundBtn.setAttribute('aria-pressed','false');
+    soundBtn.setAttribute('aria-label','Nyalakan musik');
+  }else{
+    playMusic();
+  }
 });
 
 /* amplop -> surat */
@@ -332,6 +413,7 @@ const dots=[...dotsBox.children];
 envelope.addEventListener('click',()=>{
   if(opened) return;
   opened=true;
+  if(!musicOn) playMusic();
   envelope.classList.add('open');
   setTimeout(()=>envelope.classList.add('leaving'),620);
   setTimeout(()=>{
