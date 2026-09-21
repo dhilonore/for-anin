@@ -239,11 +239,16 @@ button.ghost[hidden]{display:none}
   50%{opacity:1;transform:scale(1.15)}
 }
 
-.sound-btn{
+.sound-wrap{
   position:fixed;
   top:calc(14px + env(safe-area-inset-top,0px));
   left:14px;
   z-index:5;
+  display:flex;align-items:center;gap:9px;
+  max-width:calc(100vw - 28px);
+}
+.sound-btn{
+  flex:0 0 auto;
   width:46px;height:46px;border-radius:50%;
   border:0;cursor:pointer;
   background:rgba(255,255,255,.85);
@@ -256,6 +261,18 @@ button.ghost[hidden]{display:none}
 }
 .sound-btn:hover{transform:scale(1.06)}
 .sound-btn:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+.sound-label{
+  font-size:.82rem;line-height:1.25;
+  color:#215072;
+  background:rgba(255,255,255,.78);
+  padding:6px 12px;border-radius:999px;
+  box-shadow:0 4px 10px rgba(20,70,105,.18);
+  backdrop-filter:blur(3px);
+  white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;
+  max-width:min(230px,58vw);
+}
+.sound-label strong{font-weight:600;color:#1d4f74}
 
 .heart{position:fixed;top:-40px;z-index:3;pointer-events:none;font-size:22px;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(112vh) rotate(260deg);opacity:0}}
@@ -285,7 +302,9 @@ button.ghost[hidden]{display:none}
   50%{opacity:1;transform:scale(1.15)}
 }
 
-.sound-btn{width:40px;height:40px;font-size:1rem;top:calc(10px + env(safe-area-inset-top,0px));left:10px}
+.sound-wrap{top:calc(10px + env(safe-area-inset-top,0px));left:10px;gap:7px}
+  .sound-btn{width:38px;height:38px;font-size:1rem}
+  .sound-label{font-size:.72rem;padding:5px 10px;max-width:52vw}
 }
 @media (max-height:560px){
   .stage{align-items:start;padding-top:calc(14px + env(safe-area-inset-top,0px))}
@@ -298,7 +317,10 @@ button.ghost[hidden]{display:none}
 <div class="sky" id="sky" aria-hidden="true"><span class="moon"></span></div>
 
 <audio id="bgm" src="music.mp3" loop preload="none"></audio>
-<button class="sound-btn" id="soundBtn" aria-label="Nyalakan musik" aria-pressed="false">&#9835;</button>
+<div class="sound-wrap">
+  <button class="sound-btn" id="soundBtn" aria-label="Nyalakan musik" aria-pressed="false">&#9835;</button>
+  <span class="sound-label"><strong>Best Part</strong> &mdash; Daniel Caesar (feat. H.E.R)</span>
+</div>
 
 <main class="stage">
   <div class="envelope-wrap" id="envWrap">
