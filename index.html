@@ -227,6 +227,18 @@ button.nav:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
 button.ghost{background:none;color:#6f97b3;box-shadow:none;padding:11px 8px}
 button.ghost[hidden]{display:none}
 
+.star{
+  position:absolute;
+  border-radius:50%;
+  background:#fffdf2;
+  box-shadow:0 0 6px 1px rgba(255,253,242,.85);
+  animation:twinkle ease-in-out infinite;
+}
+@keyframes twinkle{
+  0%,100%{opacity:.25;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.15)}
+}
+
 .sound-btn{
   position:fixed;
   top:calc(14px + env(safe-area-inset-top,0px));
@@ -261,7 +273,19 @@ button.ghost[hidden]{display:none}
   .controls{margin-top:12px;padding-top:12px;gap:8px}
   button.nav{padding:10px 16px;font-size:.94rem}
   .moon{width:min(64px,17vw);height:min(64px,17vw);top:calc(3% + env(safe-area-inset-top,0px));right:5%}
-  .sound-btn{width:40px;height:40px;font-size:1rem;top:calc(10px + env(safe-area-inset-top,0px));left:10px}
+  .star{
+  position:absolute;
+  border-radius:50%;
+  background:#fffdf2;
+  box-shadow:0 0 6px 1px rgba(255,253,242,.85);
+  animation:twinkle ease-in-out infinite;
+}
+@keyframes twinkle{
+  0%,100%{opacity:.25;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.15)}
+}
+
+.sound-btn{width:40px;height:40px;font-size:1rem;top:calc(10px + env(safe-area-inset-top,0px));left:10px}
 }
 @media (max-height:560px){
   .stage{align-items:start;padding-top:calc(14px + env(safe-area-inset-top,0px))}
@@ -353,10 +377,25 @@ const sky=document.getElementById('sky');
   sky.appendChild(el);
 });
 
+/* bintang-bintang kecil */
+for(let n=0;n<22;n++){
+  const st=document.createElement('span');
+  st.className='star';
+  const size=(1.5+Math.random()*2.5).toFixed(1);
+  st.style.width=size+'px';
+  st.style.height=size+'px';
+  st.style.left=(Math.random()*100)+'vw';
+  st.style.top=(Math.random()*32)+'%';
+  st.style.animationDuration=(1.8+Math.random()*2.6)+'s';
+  st.style.animationDelay=(-Math.random()*4)+'s';
+  sky.appendChild(st);
+}
+
 /* karakter melayang */
-[{top:'12%',w:110,d:16,dl:-2,flip:false},
+[{top:'12%',w:110,d:16,dl:-2, flip:false},
  {top:'52%',w:150,d:22,dl:-9, flip:false},
- {top:'74%',w:88, d:18,dl:-13,flip:true }].forEach(p=>{
+ {top:'74%',w:88, d:18,dl:-13,flip:true },
+ {top:'91%',w:120,d:19,dl:-6, flip:false}].forEach(p=>{
   const el=document.createElement('div');
   el.className='pup'+(p.flip?' flip':'');
   el.style.cssText=`top:${p.top};width:${p.w}px;animation-duration:${p.d}s;animation-delay:${p.dl}s`;
