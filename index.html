@@ -197,6 +197,26 @@ body{
 }
 .letter p{font-size:1.02rem;line-height:1.8;margin:0 0 14px;max-width:48ch}
 .sign{font-family:Caveat,cursive;font-size:1.45rem;color:#5b86a4}
+.lyric{
+  font-style:italic;color:#4a7b9d;
+  padding-left:14px;border-left:3px solid #bfe0f2;
+}
+.moon-quote{
+  text-align:center;font-style:italic;
+  font-family:Caveat,cursive;font-size:1.85rem;
+  color:#3d6f92;
+  max-width:none;
+  margin:30px auto 4px;
+  padding-top:18px;
+  position:relative;
+}
+.moon-quote::before{
+  content:"";
+  position:absolute;top:0;left:50%;
+  translate:-50% 0;
+  width:56px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blush),transparent);
+}
 .page{display:none}
 .page.active{display:block;animation:page-in .45s ease both}
 @keyframes page-in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
@@ -334,7 +354,7 @@ button.ghost[hidden]{display:none}
   </div>
 
   <article class="letter" id="letter" aria-live="polite">
-    <p class="page-no" id="pageNo">Lembar 1 dari 5</p>
+    <p class="page-no" id="pageNo">Lembar 1 dari 2</p>
 
     <div class="letter-body" id="letterBody">
       <!-- ====== TULIS ISI SURAT DI SINI. Satu <section> = satu lembar. ====== -->
@@ -345,29 +365,113 @@ button.ghost[hidden]{display:none}
       </section>
 
       <section class="page">
-        <h2>Awalnya sederhana</h2>
-        <p>Aku ingat cara kamu menahan tawa waktu ada yang lucu tapi suasananya lagi serius. Aku ingat kamu selalu bilang "hati-hati di jalan", padahal jaraknya cuma lima menit.</p>
-        <p>Hal-hal kecil itu yang tanpa sadar aku kumpulkan tiap hari, satu per satu, sampai jumlahnya terlalu banyak untuk kusebut kebetulan.</p>
+        <p>Kadang aku bingung harus mulai dari mana, karena perasaan ini nggak pernah datang dengan suara yang keras. Dia tumbuh pelan-pelan, tanpa aku sadari, sampai akhirnya aku sadar kalau hampir setiap hal kecil selalu bisa bikin aku kepikiran kamu. Cara kamu ngomong, cara kamu ketawa, bahkan cara kamu diam pun entah kenapa punya tempatnya sendiri di pikiranku.</p>
+        <p>Kalau harus dibuat menjadi sebuah metafora, mungkin kehadiran kamu seperti cat yang perlahan mewarnai sebuah kanvas yang awalnya kosong. Awalnya cuma satu warna kecil yang bahkan nggak terlalu aku sadari, lalu sedikit demi sedikit bertambah, sampai tanpa sadar kanvas itu mulai dipenuhi warna yang berasal dari kamu.</p>
+        <p class="lyric">Bener sih kata lagu Backstreet Boys yang berjudul Shape of My Heart, yang bilang, &ldquo;You can save me from the man that I've become, looking back on the things I've done, I was trying to be someone and I played my part.&rdquo;</p>
+        <p>Jujur, aku baru kali ini ngerasa bisa nggak segengsi ini dan bisa sejujur ini tentang perasaanku. Bisa ngomong sejelas ini ke kamu, tanpa terlalu takut akan penolakan. Karena aku mulai sadar, kalau jujur dan berani mengakui apa yang aku rasain memang perlu ku lakukan untuk diriku yang sekarang.</p>
+        <p>Mungkin karena aku sering menoleh lagi ke diriku yang dulu. Diriku yang penuh takut akan penolakan, yang lebih memilih menyembunyikan perasaan, bersikap biasa aja ketika sebenarnya suka sama seseorang, lalu diam-diam berharap orang itu yang akan mengatakannya lebih dulu dibandingkan aku. Sekarang aku sadar, ternyata ada banyak hal dari diriku yang dulu yang nggak ingin aku ulangi lagi.</p>
+        <p>Aku udah nggak mau terus berpura-pura menjadi seseorang yang bukan diriku sendiri hanya karena takut dengan kemungkinan yang mungkin terjadi itu. Aku nggak mau lagi menyembunyikan apa yang ku rasakan hanya supaya terlihat baik-baik saja hehe. Karena pada akhirnya, aku belajar dari semua yang pernah ku lewati, dan dari sana aku belajar menjadi diriku yang sekarang yaitu seseorang yang berani mengakui perasaannya, berani mengambil langkah, dan nggak lagi membiarkan rasa takut menentukan apa yang harus aku rasakan.</p>
+        <p>Mungkin itu juga alasan kenapa kali ini aku memilih untuk jujur sama kamu. Bukan karena aku tiba-tiba berubah menjadi seseorang yang nggak takut apa-apa, tapi karena aku sadar bahwa ada beberapa hal yang memang layak diperjuangkan meskipun selalu ada kemungkinan untuk ditolak.</p>
+        <p>Dan kalau di awal lagu itu aku sedang melihat kembali sosok diriku yang dulu, mungkin di bagian ini aku sudah sampai pada satu titik di mana aku nggak ingin lagi bersembunyi di balik sosok itu.</p>
+        <p class="lyric">Seperti kata lirik di bagian akhirnya, &ldquo;Now let me show you the shape of my heart.&rdquo;</p>
+        <p>Jadi kali ini, aku cuma ingin menunjukkan ke kamu aku yang sebenarnya. Tanpa gengsi, tanpa pura-pura, dan tanpa menyembunyikan apa pun lagi pas semenjak aku kenal kamu ini.</p>
       </section>
-
       <section class="page">
-        <h2>Lalu jadi kebiasaan</h2>
-        <p>Setiap hal baik yang terjadi, kamu orang pertama yang ingin kuberi tahu. Setiap hari yang berat jadi lebih ringan begitu namamu muncul di layar.</p>
-        <p>Aku sempat bilang ke diriku sendiri bahwa ini cuma nyaman. Ternyata bukan.</p>
+        <p>Dari awal sebenarnya aku udah merhatiin kamu terus kok. Bahkan sebelum aku kenal sama kamu. Awalnya aku ngelihat kamu sebagai orang yang diem dan kalem gitu. Tapi lama-lama aku mulai lihat kalau ternyata kamu bisa berbaur juga, bisa mengenal orang lain, dan perlahan membuka diri. Dan ga seperti awal tadi.</p>
+        <p>Aku juga ngerasa kamu bukan tipe orang yang bisa langsung mengenal banyak orang sekaligus. Kamu lebih seperti orang yang perlu mengenal seseorang satu per satu, mengamati sekitar dulu, baru kemudian merasa bisa untuk mulai berbaur. Makanya menurutku, mungkin itu juga alasan kenapa kamu terlihat pendiam di awal. Kamu perlu waktu untuk mengenal lingkungan dan orang-orang di dalamnya kan supaya bisa merasa nyaman.</p>
+        <p>Dan ternyata, sifat itu juga ada di diriku. Kalau berada di lingkungan baru, aku juga kurang lebih sama seperti kamu. Aku lebih suka mengamati dulu, mengenal orang satu per satu, baru perlahan membuka diri. Mungkin dari kesamaan kecil itu juga aku mulai merasa tertarik sama kamu.</p>
+        <p>Tapi walaupun saat itu aku udah mulai tertarik, aku tetap nggak berani buat memulai interaksi duluan. Aku memang bukan tipe orang yang gampang memulai interaksi dengan seseorang. Ada rasa takut kalau aku yang mulai duluan, nanti malah dianggap punya maksud yang macem-macem. Jadinya aku lebih memilih buat diem aja.</p>
+        <p>Makanya waktu kamu yang mulai membuka jalan interaksi duluan, aku sempat kaget. Kayak, &ldquo;Lah, ini beneran Anin yang mulai ngajak interaksi duluan ke aku?&rdquo; Walaupun awalnya cuma small talk dan ngobrolin drakor, buat aku itu tetap berarti. Karena dari interaksi kecil itu, perlahan kita mulai semakin sering ngobrol, saling share video, saling balas pesan per bubble, sampai akhirnya interaksi kecil itu berkembang menjadi sesuatu yang jauh lebih besar dari yang ga pernah ku bayangkan.</p>
+        <p>Dan sebenarnya, aku sendiri bukan tipikal orang yang seperti ini kalau nggak ada ketertarikan. Kamu juga mungkin udah tahu seberapa cueknya aku ke cewek kalau memang nggak ada sesuatu yang membuat aku tertarik. Makanya ke kamu aku bisa beda. Cara aku merespons kamu, cara aku bercanda, cara aku memperhatikan kamu, semuanya terasa sedikit berbeda dibanding caraku ke orang lain.</p>
+        <p>Bahkan teman-temanku sampai sadar soal itu. Irfan pernah bilang, &ldquo;Kenapa kayak lu ngerespon si Anin itu kayanya beda sendiri? Walaupun lu biasanya ngeledek, tapi ke Anin ledekannya itu beda sendiri, nggak sama kayak ke yang lain.&rdquo;</p>
+        <p>Dan mungkin saat itu aku sendiri belum benar-benar bisa menjelaskan kenapa aku bisa berbeda ke kamu. Tapi semakin lama aku mengenal kamu, semakin aku sadar kalau ternyata ada banyak hal yang membuat aku merasa dekat sama kamu.</p>
+        <p>Hobi kita sama. Kebiasaan kita sama. Sifat kita sama. MBTI kita sama. Zodiak kita bahkan sama-sama berada di elemen tanah. Taste musik kita banyak yang sama. Humor kita sama. Cara kita berinteraksi juga terasa mirip. Bahkan pengalaman yang pernah kita lewati di masa lalu pun bisa dibilang punya banyak kemiripan.</p>
+        <p>Kalau dipikir-pikir lagi, rasanya terlalu banyak kesamaan yang ada di antara kita untuk sekadar aku anggap sebagai kebetulan kecil. Dan semakin lama aku mengenal kamu, semakin aku merasa bahwa mungkin bukan cuma karena aku tertarik sama kamu, tapi karena ada banyak bagian dari dirimu yang terasa familiar buat aku.</p>
+        <p>Seolah-olah, dalam diri kamu, aku menemukan banyak hal yang selama ini juga ada di dalam diri aku sendiri.</p>
+        <p>Entah ini takdir atau gimana, atau mungkin ini yang orang-orang sebut sebagai Red String Theory, maybe? Teori yang sering dikaitkan dengan pertemuan-pertemuan &ldquo;kebetulan&rdquo; yang sebenarnya sudah diatur oleh takdir.</p>
+        <p>Aku nggak tahu apakah semua yang terjadi di antara kita memang sudah ditulis sedemikian rupa atau cuma kebetulan yang kebetulan banget. Tapi kalau aku melihat lagi bagaimana semuanya bermula, rasanya lucu juga kalau semua ini cuma dianggap sebagai kebetulan wkwkwkwk.</p>
       </section>
-
       <section class="page">
-        <h2>Jadi, begini.</h2>
-        <p>Aku menyukaimu. Bukan yang datang tiba-tiba, tapi yang tumbuh pelan sampai aku tidak bisa berpura-pura lagi.</p>
-        <p>Kamu tidak perlu menjawab sekarang, dan kamu tidak perlu merasa bersalah apa pun jawabannya. Aku menulis ini bukan untuk menuntut apa-apa, hanya supaya kamu tahu.</p>
+        <p>Sampai akhirnya aku pernah bilang ke kamu waktu itu, sebenarnya hubungan ini mau kita bawa ke mana? Apakah kita mau lebih dekat satu sama lain dan mulai mengenal satu sama lain lebih jauh?</p>
+        <p>Karena jujur, aku nggak mau bikin kamu merasa digantung juga. Kalau memang cuma teman, rasanya cara kita berinteraksi juga sudah bukan kaya dua orang yang sekadar berteman. Makanya aku berinisiatif buat nanyain tentang hubungan ini wkwkwk. Walaupun sebenarnya awalnya kamu duluan yang mancing dengan pertanyaan tentang alasan aku ngasih misi ke kamu itu buat apa wkwkwk. Tapi aku ngerasa itu memang jadi waktu yang pas buat aku balik nanyain, sebenarnya kita ini mau dibawa ke mana.</p>
+        <p>Sampai akhirnya kita sama-sama setuju buat lebih dekat dan lebih mengenal satu sama lain. Jadi ya, why not kita jalanin aja, kan? Wkwkwk.</p>
+        <p>Dan ternyata, kamu dari awal juga udah punya ketertarikan yang sama ke aku. First impression kita ternyata sama-sama bagus. Kita sama-sama punya ketertarikan sejak awal, dan ternyata kita juga memperlakukan satu sama lain dengan cara yang berbeda dibandingkan kita memperlakukan orang lain.</p>
+        <p>Sampai akhirnya kita juga udah sama-sama mengakui kalau kita suka satu sama lain.</p>
+        <p>Tapi maaf ya, selama aku memperlakukan kamu, aku mungkin nggak bisa jadi orang yang penuh kata-kata manis atau yang sering ngegombal. Itu juga memang bukan aku banget. Aku lebih sering menunjukkan sesuatu lewat tindakan daripada sekadar kata-kata. Karena aku percaya setiap orang punya caranya masing-masing untuk menunjukkan apa yang mereka rasakan, kan? Hehe.</p>
+        <p>Aku jadi keinget sama drakor <em>Can This Love Be Translated?</em>, yang pernah bilang kalau manusia itu punya bahasanya masing-masing.</p>
+        <p>Bener juga. Ada lebih dari 7.100 bahasa aktif di dunia. Tapi kalau dipikir-pikir, mungkin sebenarnya jumlah bahasa itu sama banyaknya dengan jumlah manusia yang ada di dunia.</p>
+        <p>Karena setiap orang punya caranya sendiri untuk berbicara, mengekspresikan perasaan, bahkan menyimpan sesuatu yang nggak bisa mereka ucapkan. Bahasa kita ternyata nggak selalu berupa kata-kata.</p>
+        <p>Ada hati yang berbicara lewat senyum. Ada yang lewat diam. Ada yang lewat tawa. Ada yang lewat perhatian kecil yang bahkan mungkin nggak disadari oleh orang lain. Ada juga yang mengungkapkan perasaannya lewat kata-kata yang jarang sekali diucapkan.</p>
+        <p>Masing-masing punya bahasa yang berbeda. Nggak semuanya bisa diterjemahkan dengan cara yang sama, dan nggak semuanya harus disampaikan dengan bentuk yang sama.</p>
+        <p>Mungkin bahasa aku memang bukan bahasa yang paling pandai mengucapkan kata-kata manis. Tapi kalau selama ini aku pernah melakukan hal-hal kecil untuk kamu, memperhatikan sesuatu tentang kamu, meluangkan waktu, atau berusaha ada ketika kamu membutuhkan seseorang, mungkin itu adalah caraku berbicara.</p>
+        <p>Caraku untuk bilang bahwa kamu berarti buat aku.</p>
+        <p>Dan mungkin, dari semua bahasa yang berbeda itu, aku bersyukur kita ternyata bisa saling memahami bahasa satu sama lain.</p>
+        <p>Bener kan?</p>
       </section>
-
       <section class="page">
-        <h2>Satu pertanyaan saja</h2>
-        <p>Maukah kamu memberi aku kesempatan untuk mengenalmu lebih jauh lagi &mdash; sebagai seseorang yang menyayangimu?</p>
-        <p class="sign">Dari aku, yang menunggu jawabanmu &#9825;</p>
+        <p>Sampai akhirnya, setelah kita sama-sama mengakui kalau kita suka satu sama lain, kita juga nggak langsung masuk ke sebuah hubungan. Dan sebenarnya, ada alasannya kenapa aku memilih seperti itu.</p>
+        <p>Kamu juga pernah nanya ke aku kan, kenapa aku bisa seterang-terangnya bilang suka sama kamu. Jawabannya sederhana. Karena aku ngerasa aku udah nggak perlu nutup-nutupin apa pun lagi dari kamu. Apalagi setelah kita sama-sama bilang kalau kita mau lebih dekat dan saling mengenal lebih jauh. Rasanya udah nggak ada lagi tembok tinggi yang ngebikin menahan apa yang sebenarnya aku rasakan.</p>
+        <p>Dan waktu itu aku juga bilang ke kamu, kalau memang kita mau membawa hubungan ini ke arah sana, dan ternyata kita punya ekspektasi yang sama, ya jalanin aja secara slowly. Biarkan waktu yang berbicara kapan kita memang harus mulai.</p>
+        <p>Aku juga merasa kalau kita memang mau menuju ke arah sana, kita perlu punya pondasinya dulu. Bukan karena aku mau tarik-ulur perasaan kamu, bukan juga karena aku ragu sama kamu. Justru karena aku menganggap ini sesuatu yang serius, aku pengen kita punya dasar yang cukup kuat sebelum benar-benar melangkah lebih jauh.</p>
+        <p>Karena buat aku, hubungan bukan cuma soal dua orang yang saling suka. Tapi juga tentang bagaimana dua orang itu bisa saling memahami, berkomunikasi, mengutarakan apa yang mereka mau, dan sama-sama berusaha ketika ada sesuatu yang nggak berjalan sesuai harapan.</p>
+        <p>Aku juga sering ngeledek kamu kan, kalau kamu itu orangnya gengsian. Tapi ternyata di balik bercandaan itu, ada juga unek-unek yang memang pengen aku sampaikan ke kamu.</p>
+        <p>Aku nggak mau terus-terusan jadi orang yang selalu ngajak duluan. Bukan karena aku nggak mau ngajak kamu, tapi aku takut kalau terus seperti itu, kesannya aku yang terlalu ingin menjalani ini, sementara kamu hanya menjadi pihak yang menerima.</p>
+        <p>Aku maunya kita sama-sama berusaha.</p>
+        <p>Ada kalanya aku yang ngajak kamu, ada kalanya kamu yang ngajak aku. Ada waktunya aku yang mengusahakan sesuatu buat kamu, dan ada waktunya kamu juga menunjukkan kalau kamu memang ingin mengusahakannya buat aku. Bukan tentang siapa yang lebih banyak memberi atau siapa yang lebih sering memulai, tapi tentang bagaimana kita sama-sama menunjukkan bahwa kita memang mau berada di sini.</p>
+        <p>Dan waktu itu kamu sampai minta maaf ke aku. Padahal sebenarnya kamu nggak perlu minta maaf.</p>
+        <p>Karena pada saat itu, kita memang masih sama-sama menerka. Sama-sama takut kalau ternyata kita mengganggu satu sama lain. Kamu sebenarnya bukan nggak mau, tapi kamu terlalu memikirkan perasaan aku. Kamu takut mengecewakan aku, takut kalau waktu yang kamu luangkan ternyata malah membuat aku merasa terbebani, apalagi kamu juga sering harus melakukan sesuatu ketika diminta orang tua kamu.</p>
+        <p>Akhirnya kamu lebih memilih diam.</p>
+        <p>Dan aku juga baru sadar, ternyata dari sisi kamu, diam itu bukan berarti nggak mau. Kamu cuma terlalu nggak enakan dan terlalu banyak mempertimbangkan perasaan aku.</p>
+        <p>Makanya waktu itu aku bilang ke kamu, jangan diam-diam aja. Kalau memang mau, bilang mau. Kalau nggak mau, bilang nggak mau. Kalau pengen ngajak aku, ya ajak aja. Karena aku nggak akan bisa memahami apa yang ada di kepala kamu kalau kamu sendiri nggak mengutarakannya.</p>
+        <p>Dan ternyata, pada akhirnya kita cuma sama-sama salah paham.</p>
+        <p>Aku mengira kamu menghindari aku, sementara kamu sebenarnya takut membuat aku merasa terbebani. Aku mengira kamu cuma menjadi pihak yang menerima, sementara kamu sebenarnya juga ingin mengajak dan meluangkan waktu, hanya saja rasa nggak enakan kamu sering menahannya.</p>
+        <p>Dan dari situ aku jadi semakin sadar, ternyata membangun pondasi itu memang bukan sesuatu yang sia-sia.</p>
+        <p>Karena perlahan, kita mulai belajar memahami cara satu sama lain.</p>
+        <p>Terakhir, makasih ya, Anin.</p>
+        <p>Makasih karena kamu mau menurunkan gengsi itu sedikit demi sedikit buat aku. Aku bisa merasakan kalau sekarang kamu sudah jauh lebih bisa mengutarakan apa yang kita mau tanpa membuat salah satu dari kita merasa harus terus menjadi pihak yang memulai atau menerima.</p>
+        <p>Makasih juga karena selama ini kamu mau mengerti aku. Makasih atas effort yang kamu kasih, atas setiap perubahan kecil yang kamu usahakan sampai sekarang.</p>
+        <p>Dan ketika aku bilang kamu perlu lebih terbuka dan lebih mudah mengutarakan apa yang kamu mau, sebenarnya aku nggak cuma mengatakan itu untuk diriku sendiri. Aku juga ingin itu untuk kebaikan kamu sendiri.</p>
+        <p>Aku ingin kamu bisa lebih mudah bilang ketika kamu ingin sesuatu, tanpa harus menahannya hanya karena takut merepotkan orang lain. Aku ingin kamu bisa bilang ketika kamu ingin mengajak, ketika kamu ingin ditemani, ketika kamu ingin voice, ketika kamu ingin cerita, bahkan ketika kamu cuma ingin aku ada di sana.</p>
+        <p>Karena kamu nggak harus selalu menjadi orang yang mengerti perasaan orang lain sampai melupakan apa yang kamu sendiri rasakan.</p>
+        <p>Dan I'm glad to see you, Anin.<br>Aku senang melihat kamu yang sekarang. Seseorang yang perlahan belajar membuka diri, belajar mengutarakan perasaan, belajar menurunkan gengsi, dan belajar menjadi versi dirimu yang lebih jujur dari sebelumnya.</p>
+        <p>Aku tahu kamu masih belajar, dan mungkin aku juga masih banyak harus belajar.</p>
+        <p>Tapi melihat perubahan kecil yang kamu lakuin sampai sekarang, entah kenapa itu membuat aku ikut seneng.</p>
+        <p>Karena setidaknya, aku bisa melihat kamu menjadi seseorang yang sedikit lebih berani mengatakan apa yang sebenarnya ada di dalam hatimu. (˶ᵔ ᵕ ᵔ˶)</p>
       </section>
-      <!-- ====== SELESAI ISI SURAT ====== -->
+      <section class="page">
+        <p>Dan kayaknya, ini udah sampai di penghujung perjalanan dari hubungan kita yang sekarang &mdash; hubungan yang bisa dibilang slow burn, yang kita jalani tanpa terburu-buru. Karena menurutku, sesuatu yang diburu-buru juga belum tentu akan menjadi sesuatu yang baik, kan?</p>
+        <p>Selama perjalanan ini, aku ngerasa kita udah sampai di titik di mana kita bisa mulai masuk ke arah relationship.</p>
+        <p>Kalau memang kamu mau&hellip;</p>
+        <p>Let&rsquo;s do it.</p>
+        <p>Kalau nanti kita benar-benar masuk ke sebuah hubungan, aku juga nggak mau kita merasa harus mengubah interaksi kita secara drastis. Kita nggak perlu tiba-tiba menjadi dua orang yang berbeda hanya karena sekarang ada sebuah label di antara kita. Kita cukup melanjutkan apa yang sudah kita bangun sampai sekarang, sambil perlahan belajar membangun sesuatu yang lebih baik bersama.</p>
+        <p>Mungkin ini first time buat aku ketika membawa seseorang ke arah sebuah relationship, but it&rsquo;s not the first time I treat someone.</p>
+        <p>Aku nggak mau bilang aku pasti akan menjadi seseorang yang selalu tahu harus melakukan apa buat kamu. Aku juga nggak mau memberikan janji-janji besar seolah-olah aku tahu seperti apa aku nantinya.</p>
+        <p>Tapi ada satu hal yang bisa aku bilang.</p>
+        <p>Aku akan selalu mengusahakan yang terbaik buat kamu.</p>
+        <p>Aku akan mengusahakan supaya kamu nggak merasa sendirian. Aku akan mengusahakan untuk menjadi salah satu tempat teraman buat kamu. Aku akan mengusahakan untuk bisa menjadi rumah ketika kamu membutuhkan tempat untuk pulang. Aku akan mengusahakan untuk menjadi seseorang yang bisa memahami kamu, bahkan ketika mungkin kamu sendiri sedang kesulitan memahami apa yang kamu rasakan.</p>
+        <p>Aku akan mengusahakan supaya kamu bisa merasa lebih bahagia dari sebelumnya.</p>
+        <p>Dan aku juga akan mengusahakan supaya hubungan ini nggak menjadi penghalang bagi proses masing-masing dari kita. Aku nggak ingin hubungan membuat kita berhenti bertumbuh sebagai individu. Aku justru ingin hubungan ini menjadi tempat di mana kita bisa saling mendukung proses masing-masing, saling mendorong untuk berkembang, dan saling mengingatkan ketika salah satu dari kita mulai kehilangan arah.</p>
+        <p>Aku ingin menunjukkan kepada kamu bahwa sebuah hubungan nggak seharusnya hadir untuk menjadi beban.</p>
+        <p>Hubungan seharusnya menjadi tempat di mana dua orang bisa saling meringankan, bukan saling memberatkan.</p>
+        <p>Tapi pada akhirnya, semua itu kembali ke kita.</p>
+        <p>Seberapa jelas kita membangun hubungan ini, seberapa baik kita menjaganya, dan seberapa mau kita berdua untuk terus belajar satu sama lain.</p>
+        <p>Jadi untuk sekarang, kita jalanin aja dulu seperti yang selama ini kita lakukan.</p>
+        <p>Nggak perlu terburu-buru menjadi sempurna. Nggak perlu memaksakan semuanya harus langsung berjalan sesuai ekspektasi. Kita nikmati prosesnya, kita belajar satu sama lain, dan kalau ada sesuatu yang salah, kita bicarakan.</p>
+        <p>Karena aku juga nggak pernah menganggap apa yang kita punya ini sebagai sesuatu yang main-main.</p>
+        <p>Untuk kedepannya, kita lihat nanti yaaa.</p>
+        <p>Yang jelas, untuk sekarang&hellip;</p>
+        <p class="sign">aku memilih kamu. Anin</p>
+      </section>
+      <section class="page">
+        <p>Dan mungkin, setelah semua yang ku ceritain dari awal sampai akhir, sebenarnya nggak banyak lagi yang perlu aku katakan.</p>
+        <p>Aku cuma ingin kamu tahu bahwa semua yang aku tulis di sini adalah apa yang selama ini ada di dalam hati aku. Tentang bagaimana semuanya bermula, bagaimana aku mulai mengenal kamu, bagaimana perasaan itu tumbuh, sampai akhirnya kita bisa sampai di titik ini.</p>
+        <p>Aku nggak tahu seperti apa cerita kita setelah ini. Aku juga nggak mau terlalu jauh mendahului waktu.</p>
+        <p>Untuk sekarang, aku cuma ingin kita melangkah bersama, perlahan, seperti yang selama ini kita lakukan.</p>
+        <p>Dan kalau kamu bersedia&hellip;</p>
+        <p>let&rsquo;s write the next chapter together.</p>
+        <p class="moon-quote">&ldquo;The moon is beautiful, isn&rsquo;t it?&rdquo;</p>
+      </section>
+      <!-- ====== Halaman berikutnya menyusul &mdash; kirim teksnya kapan saja ====== -->
     </div>
 
     <p class="scroll-cue" id="scrollCue" hidden>gulir untuk lanjut membaca &#8595;</p>
